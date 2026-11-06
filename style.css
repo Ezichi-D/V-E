@@ -1,0 +1,143 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+  overflow-x: hidden;
+}
+
+.section {
+  display: none;
+  min-height: 100vh;
+  width: 100%;
+  padding: 5%;
+  color: #fff;
+  text-align: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.section.active {
+  display: flex;
+}
+
+h1, h2 {
+  font-size: 2.3rem;
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin-bottom: 30px;
+}
+
+button {
+  padding: 12px 26px;
+  border-radius: 25px;
+  border: none;
+  font-size: 1rem;
+  background: #fff;
+  color: #ff5a7a;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+button:hover {
+  transform: scale(1.08);
+}
+
+/* Story layout */
+.story-container {
+  display: flex;
+  gap: 30px;
+  max-width: 1000px;
+  width: 100%;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.story-text {
+  flex: 1 1 400px;
+  background: rgba(0,0,0,0.3);
+  padding: 20px;
+  border-radius: 12px;
+  line-height: 1.6;
+  cursor: pointer;
+}
+
+.slideshow {
+  flex: 1 1 300px;
+  max-width: 400px;
+  margin-top: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.slide-img {
+  position: absolute;
+  width: 100%;
+  opacity: 0;
+  border-radius: 12px;
+  transition: opacity 1s ease-in-out;
+}
+
+.slide-img.active {
+  opacity: 1;
+  position: relative;
+}
+
+.buttons {
+  display: flex;
+  gap: 20px;
+}
+
+/* Backgrounds */
+.intro {
+  background: url('first.jpg');
+}
+
+.story {
+  background: url('12th.jpg') center/cover;
+}
+
+.question {
+  background: url('16th.jpg') center/cover no-repeat;
+}
+
+.final {
+  background: url('22th.jpg') center/cover no-repeat;
+}
+
+/* Responsive for tablets & phones */
+@media (max-width: 1000px) {
+  .story-container {
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+  }
+  .story-text, .slideshow {
+    flex: 1 1 100%;
+    max-width: 90%;
+  }
+  .slideshow img {
+    width: 100%;
+    height: auto;
+  }
+  button {
+    width: 80%;
+    font-size: 14px;
+  }
+  h1, h2 {
+    font-size: 1.8rem;
+  }
+  p {
+    font-size: 1rem;
+  }
+}
